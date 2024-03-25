@@ -16,8 +16,3 @@ export async function POST(req: NextRequest) {
 
   return NextResponse.json({ message: "Signed up" }, { status: 200 });
 }
-
-export async function GET() {
-  const user = await client.user.findFirst({});
-  return NextResponse.json({ message: user?.username, email: user?.username });
-}
